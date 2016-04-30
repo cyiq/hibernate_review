@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cyiq.hql.Student">
+	<id name="sid" type="java.lang.Long" length="5">
+			<column name="sid"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="sname" type="java.lang.String" length="20">
+			<column name="sname"></column>
+		</property>
+		<property name="description" type="java.lang.String" length="50"></property>
+		<many-to-one name="classes" column="cid" class="cyiq.hql.Classes"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cyiq.relation.onetomany.single.bean.Classes">
+		<id name="cid" type="java.lang.Long" length="5">
+			<column name="cid"></column>
+			<generator class="increment"></generator>
+		</id>
+		<property name="cname" type="java.lang.String" length="20">
+			<column name="cname"></column>
+		</property>
+		<property name="description" type="java.lang.String" length="50"></property>
+		<set name="students" cascade="all" inverse="false">
+			<key>
+				<column name="cid"></column>
+			</key>
+			<one-to-many class="cyiq.relation.onetomany.single.bean.Student" />
+		</set>
+	</class>
+</hibernate-mapping>

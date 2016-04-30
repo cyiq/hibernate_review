@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cyiq.domain.Person">
+		<!-- 主键  
+				name为javabean中的映射属性  
+				column为创建的表的对应字段名，可为空，为空则与name相同
+		 -->
+		<id name="pid" column="id" type="java.lang.Long" length="6">
+			<!-- 主键生成器，表明主键的生成策略，由hibernate执行 -->
+			<generator class="increment"></generator>
+		</id>
+		<property name="pname" type="java.lang.String" length="21"></property>
+		<property name="psex" type="java.lang.String" length="2"></property>
+	</class>
+</hibernate-mapping>
